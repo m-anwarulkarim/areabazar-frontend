@@ -11,6 +11,7 @@ import {
   ShoppingBag,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 
 const mobileNavItems = [
   { label: "Home", href: "/", icon: Store },
@@ -33,24 +34,24 @@ export default function MobileMenu({ open, onClose }: Props) {
       <div className="container mx-auto px-4 py-4 sm:px-6">
         <div className="mb-4 flex items-center justify-between">
           <p className="text-sm font-semibold text-foreground">
-            Browse AreaBazar
+            Browse Area Bazar
           </p>
 
-          <button
+          <Button
             type="button"
             onClick={onClose}
             className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-border/70 bg-background text-muted-foreground"
             aria-label="Close menu"
           >
             <X className="h-4 w-4" />
-          </button>
+          </Button>
         </div>
 
         <div className="rounded-2xl border border-border/60 bg-card p-3 shadow-sm">
           <div className="flex flex-col gap-3">
             <div className="flex h-12 items-center gap-2 rounded-xl border border-border/70 bg-background px-3">
               <Search className="h-4 w-4 text-muted-foreground" />
-              <input
+              <Input
                 type="text"
                 placeholder="Search shops, products..."
                 className="w-full bg-transparent text-sm outline-none placeholder:text-muted-foreground"
@@ -66,9 +67,9 @@ export default function MobileMenu({ open, onClose }: Props) {
               />
             </div>
 
-            <button className="h-11 rounded-xl bg-emerald-600 text-sm font-semibold text-white hover:bg-emerald-700">
+            <Button className="h-11 rounded-xl bg-emerald-600 text-sm font-semibold text-white hover:bg-emerald-700">
               Search Now
-            </button>
+            </Button>
           </div>
         </div>
 

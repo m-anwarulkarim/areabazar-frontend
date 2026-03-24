@@ -57,7 +57,7 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "AreaBazar — Your Local Marketplace",
+    title: "Area Bazar — Your Local Marketplace",
     description: "Find & buy from your local marketplace with ease.",
     images: ["/icon.png"],
   },

@@ -1,63 +1,37 @@
-import { MapPin, Search, SlidersHorizontal } from "lucide-react";
+"use client";
 
-const quickFilters = [
-  "Nearby Shops",
-  "Verified Shops",
-  "Electronics",
-  "Grocery",
-  "Khulna",
-  "Dakbangla Bazar",
-];
+import Link from "next/link";
+import { MapPinned, Search } from "lucide-react";
 
-export default function HeroSearch() {
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+
+export default function HeroSearchBar() {
   return (
-    <div className="rounded-3xl border border-border/60 bg-white/85 p-3 shadow-[0_20px_60px_-20px_rgba(16,185,129,0.18)] backdrop-blur-xl dark:bg-background/80">
-      <div className="grid gap-3 xl:grid-cols-[1.4fr_1fr_1fr_auto]">
-        <div className="flex h-12 items-center gap-3 rounded-2xl border border-border/70 bg-background/70 px-4">
-          <Search className="h-4 w-4 shrink-0 text-muted-foreground" />
-          <input
-            type="text"
-            placeholder="Search shops, products, or markets..."
-            className="w-full bg-transparent text-sm outline-none placeholder:text-muted-foreground"
-          />
+    <div className="rounded-[28px] border border-border/60 bg-card/80 p-2 shadow-xl shadow-emerald-500/5 backdrop-blur">
+      <div className="flex flex-col gap-2 md:flex-row md:items-center">
+        <div className="flex flex-1 items-center gap-3 rounded-2xl px-3 py-2">
+          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-500/10 text-emerald-600">
+            <Search className="h-4 w-4" />
+          </div>
+
+          <div className="flex-1">
+            <Input
+              placeholder="Search market, area, or shop..."
+              className="h-auto border-0 bg-transparent px-0 py-0 text-sm shadow-none focus-visible:ring-0"
+            />
+          </div>
         </div>
 
-        <div className="flex h-12 items-center gap-3 rounded-2xl border border-border/70 bg-background/70 px-4">
-          <MapPin className="h-4 w-4 shrink-0 text-muted-foreground" />
-          <input
-            type="text"
-            placeholder="Select location"
-            className="w-full bg-transparent text-sm outline-none placeholder:text-muted-foreground"
-          />
-        </div>
-
-        <div className="flex h-12 items-center gap-3 rounded-2xl border border-border/70 bg-background/70 px-4">
-          <SlidersHorizontal className="h-4 w-4 shrink-0 text-muted-foreground" />
-          <select className="w-full bg-transparent text-sm outline-none">
-            <option>All Categories</option>
-            <option>Electronics</option>
-            <option>Grocery</option>
-            <option>Fashion</option>
-            <option>Mobile Accessories</option>
-            <option>Home & Kitchen</option>
-            <option>Pharmacy</option>
-          </select>
-        </div>
-
-        <button className="h-12 rounded-2xl bg-emerald-600 px-5 text-sm font-semibold text-white shadow-lg shadow-emerald-500/20 transition hover:bg-emerald-700">
-          Search
-        </button>
-      </div>
-
-      <div className="mt-4 flex flex-wrap gap-2">
-        {quickFilters.map((item) => (
-          <button
-            key={item}
-            className="rounded-full border border-border/60 bg-background/70 px-3 py-1.5 text-xs text-muted-foreground transition hover:bg-muted"
-          >
-            {item}
-          </button>
-        ))}
+        <Button
+          asChild
+          className="h-12 rounded-2xl bg-emerald-600 px-5 text-sm font-semibold hover:bg-emerald-700"
+        >
+          <Link href="/shops">
+            <MapPinned className="mr-2 h-4 w-4" />
+            Search Now
+          </Link>
+        </Button>
       </div>
     </div>
   );

@@ -34,25 +34,25 @@ export default function BrowseCategories() {
           </p>
         </div>
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
+        <div className="mt-10 grid grid-cols-3 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
           {categories.map((category) => {
             const Icon = category.icon;
 
             return (
               <Link
                 key={category.name}
-                href={`/categories/${encodeURIComponent(category.name.toLowerCase())}`}
-                className="group rounded-3xl border border-border/60 bg-card p-5 text-center shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+                href="#"
+                className="group rounded-2xl border border-border/60 bg-card p-3 text-center shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl sm:rounded-3xl sm:p-5"
               >
-                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-100 dark:bg-emerald-900/30">
-                  <Icon className="h-6 w-6 text-emerald-600" />
+                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-100 transition-colors dark:bg-emerald-900/30 sm:h-14 sm:w-14">
+                  <Icon className="h-5 w-5 text-emerald-600 sm:h-6 sm:w-6" />
                 </div>
 
-                <h3 className="mt-4 text-sm font-semibold sm:text-base">
+                <h3 className="mt-3 text-xs font-semibold leading-5 sm:mt-4 sm:text-base">
                   {category.name}
                 </h3>
 
-                <p className="mt-2 text-xs leading-6 text-muted-foreground">
+                <p className="mt-1 text-[11px] leading-5 text-muted-foreground sm:mt-2 sm:text-xs">
                   Explore local shops
                 </p>
               </Link>

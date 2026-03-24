@@ -5,29 +5,29 @@ import { Bell, Heart, UserCircle2 } from "lucide-react";
 export default function NavbarActions() {
   return (
     <div className="hidden items-center gap-2 lg:flex">
-      <button
+      <Button
         type="button"
         className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-border/70 bg-background/80 text-muted-foreground transition hover:bg-muted hover:text-foreground"
         aria-label="Notifications"
       >
         <Bell className="h-4 w-4" />
-      </button>
+      </Button>
 
-      <button
+      <Button
         type="button"
         className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-border/70 bg-background/80 text-muted-foreground transition hover:bg-muted hover:text-foreground"
         aria-label="Favorites"
       >
         <Heart className="h-4 w-4" />
-      </button>
+      </Button>
 
-      <button
+      <Button
         type="button"
         className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-border/70 bg-background/80 text-muted-foreground transition hover:bg-muted hover:text-foreground"
         aria-label="Account"
       >
         <UserCircle2 className="h-5 w-5" />
-      </button>
+      </Button>
 
       <Button
         asChild
